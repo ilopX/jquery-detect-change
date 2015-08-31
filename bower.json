@@ -1,6 +1,8 @@
 {
   "name": "ilopx-jquery-detect-change",
   "description": "Detection of changes in the properties or conditions selector",
+  "version": "0.8.1",
+  "homepage": "https://github.com/ilopX/jquery-detect-change",
   "main": [
     "dist/jquery.detect-change.js"
   ],
