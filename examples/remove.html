@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1111</title>
+</head>
+<body>
+    <div id="info"></div>
+    <button id="add">Add hook</button>
+    <button id="remove">Remove</button>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/dist/jquery.detect-change.js"></script>
+    <script>
+        $('#add').on('click', function(){
+            $('body').detectChange('clientWidth', function(){
+                $('#info').text('clientWidth:'+this.width());
+                console.log(this.width());
+            });
+
+
+        });
+        $('#remove').on('click', function(){
+            $('body').detectChange('clientWidth', 'remove');
+            console.log('remove all clientWidth hooks');
+        });
+    </script>
+</body>
+</html>

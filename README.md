@@ -1,15 +1,15 @@
 # jQuery detect change
 ## Install
-+ cdn
-+ composer
-+ bower
++ **TODO** cdn
++ **TODO** composer
++ **TODO** bower
 
 ## Use
-+ include
-+ detect change properties
-+ detect change of condition
++ **TODO** include
++ **TODO** detect change properties
++ **TODO** detect change of condition
 
 ## Global settings
-+ speed update
-+ name data selector
-+ debug
++ **TODO** speed update
++ **TODO** name data selector
++ **TODO** debug

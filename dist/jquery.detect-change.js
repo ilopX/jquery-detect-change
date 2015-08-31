@@ -2,6 +2,14 @@
  * Created by XTreme.ws on 31.08.2015.
  */
 (function ( $ ) {
+    $.event.special.destroyed = {
+        remove: function(o) {
+            if (o.handler) {
+                o.handler()
+            }
+        }
+    };
+
     var DC = {
         CONDITION: 0,
         PROP: 1,
@@ -49,17 +57,30 @@
             if (!select.data(DC.dataName)){
                 select.data(DC.dataName, []);
                 DC.list.push(select);
+                select.on('destroyed', function(){
+                    for(var i = DC.list.length-1; i >= 0; --i){
+                        if (DC.list[i] === select){
+                            DC.list.splice(i, 1);
+                        }
+                    }
+                })
             }
 
             DC.runChecker(select, param, true);
-
             select.data(DC.dataName).push(param);
             //select.prop('data', select.data(DC.dataName)); // debug info
-            DC.timer();
         },
 
         remove: function remove(select, name){
-
+            if (!select.data(DC.dataName)) {
+                select.data(DC.dataName, []);
+            }
+            var arr = select.data(DC.dataName);
+            for(var i = arr.length-1; i >= 0; --i){
+                if (arr[i].name = name){
+                    arr.splice(i, 1);
+                }
+            }
         }
     };
 
@@ -67,43 +88,26 @@
 
 
     $.fn.detectChange = function(name, func, condition) {
-        var param = {
-            name: name,
-            func: func,
-            condition: condition
-        };
+        return this.each(function() {
+            var select = $(this);
+            var param = {
+                name: name,
+                func: func,
+                condition: condition
+            };
 
-        // remove hook
-        if (func === 'remove'){
-            DC.remove(this, name);
-        }
-        // add hook, selector properties or user condition
-        else{
-            param.type = (typeof condition === 'function') ? DC.CONDITION : DC.PROP;
-            DC.add(this, param);
-        }
-
-        return this;
+            // remove hook
+            if (func === 'remove'){
+                DC.remove(select, name);
+            }
+            // add hook, selector properties or user condition
+            else{
+                param.type = (typeof condition === 'function') ? DC.CONDITION : DC.PROP;
+                DC.add(select, param);
+            }
+        });
     };
 }( jQuery ));
-// TODO: add function remove
-// TODO: add self destroy if selector remove
-// TODO: add global setting(speed, name data)
-/*
-$('body')
-    // selector properties
-    .detectChange('clientWidth', function(oldVal, newVal, init){
-        console.log(this[0].clientWidth == newVal);
-    })
-    // user condition
-    .detectChange('your-name',
-        function(change){
-            if (!change)
-                return;
-           console.log('больше 600')
-        },
-        function(init){
-            return this.width() > 600;
-        });*/
 
+// TODO: add global setting(speed, dataName, debug)
 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        div{
+
+            height: 120px;
+            float: left;
+            text-align: center;
+            vertical-align: baseline;
+            font-size: 20px;
+        }
+        button{
+            margin: 10px;
+            display: block;
+        }
+
+        #one {background-color: red; width: 50%}
+        #two {background-color: green; width: 30%}
+        #tree{background-color: blue; width: 15%}
+        #four{background-color: aqua; width: 5%}
+    </style>
+</head>
+<body>
+    <div id="one"><button>Remove</button><span>1</span></div>
+    <div id="two"><button>Remove</button><span>2</span></div>
+    <div id="tree"><button>Remove</button><span>3</span></div>
+    <div id="four"><button>Remove</button><span>4</span></div>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/dist/jquery.detect-change.js"></script>
+    <script>
+        $('div')
+            .detectChange('clientWidth', function (old, val, isInit){
+                    this.find('span').text(val);
+            })
+            .on('click', 'button',  function(){
+                // if selector remove then clear automatically
+                $(this).parent().remove();
+            });
+    </script>
+</body>
+</html>
