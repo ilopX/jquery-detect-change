@@ -1,0 +1,26 @@
+{
+  "name": "ilopx-jquery-detect-change",
+  "description": "Detection of changes in the properties or conditions selector",
+  "main": [
+    "dist/jquery.detect-change.js"
+  ],
+  "homepage": "http://getbootstrap.com",
+  "dependencies": {
+    "jquery": ">= 1.9.1"
+  },
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "detect",
+    "changes"
+  ],
+  "authors": [
+    "ilopX <ilopX@ukr.net>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "bower_components"
+  ]
+}
