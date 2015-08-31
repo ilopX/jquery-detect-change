@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<details open>
+    <summary>Click me</summary>
+    <p>Detect protects the user from all effects of moves that target it during the turn it is used, including damage. This does not include damage afflicted by weather it is susceptible to, or damage from a status condition that it obtained on a previous turn. Using Detect, Protect, or Endure consecutively decreases the chance of success by 50% each use, whether it is successful or not. Detect cannot prevent the effects of Perish Song.</p>
+</details>
+<details>
+    <summary>Click me</summary>
+    <p>Detect protects the user from all effects of moves that target it during the turn it is used, including damage. This does not include damage afflicted by weather it is susceptible to, or damage from a status condition that it obtained on a previous turn. Using Detect, Protect, or Endure consecutively decreases the chance of success by 50% each use, whether it is successful or not. Detect cannot prevent the effects of Perish Song.</p>
+</details>
+<details>
+    <summary>Click me</summary>
+    <p>Detect protects the user from all effects of moves that target it during the turn it is used, including damage. This does not include damage afflicted by weather it is susceptible to, or damage from a status condition that it obtained on a previous turn. Using Detect, Protect, or Endure consecutively decreases the chance of success by 50% each use, whether it is successful or not. Detect cannot prevent the effects of Perish Song.</p>
+</details>
+<details>
+    <summary>Click me</summary>
+    <p>Detect protects the user from all effects of moves that target it during the turn it is used, including damage. This does not include damage afflicted by weather it is susceptible to, or damage from a status condition that it obtained on a previous turn. Using Detect, Protect, or Endure consecutively decreases the chance of success by 50% each use, whether it is successful or not. Detect cannot prevent the effects of Perish Song.</p>
+</details>
+</body>
+</html>

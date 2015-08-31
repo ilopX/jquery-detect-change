@@ -27,8 +27,13 @@
                     break;
                 case DC.CONDITION:
                     var state = param.condition.call(select, init);
-                    param.func.call(select, param.val != state);
-                    param.val = state;
+                    if (init){
+                        param.val = state;
+                    }
+                    if (param.val != state){
+                        param.func.call(select);
+                        param.val = state;
+                    }
 
                     break;
             }
@@ -81,12 +86,10 @@
         return this;
     };
 }( jQuery ));
-// TODO: create separate project and put to git repository
-// TODO: create examples
 // TODO: add function remove
 // TODO: add self destroy if selector remove
 // TODO: add global setting(speed, name data)
-// TODO: add composer and bower
+/*
 $('body')
     // selector properties
     .detectChange('clientWidth', function(oldVal, newVal, init){
@@ -101,6 +104,6 @@ $('body')
         },
         function(init){
             return this.width() > 600;
-        });
+        });*/
 
 

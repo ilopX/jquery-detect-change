@@ -4,7 +4,6 @@
   "main": [
     "dist/jquery.detect-change.js"
   ],
-  "homepage": "http://getbootstrap.com",
   "dependencies": {
     "jquery": ">= 1.9.1"
   },

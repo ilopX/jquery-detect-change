@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1111</title>
+    <style>
+        #box{
+
+        }
+    </style>
+</head>
+<body>
+    <input id="ch" type="checkbox" checked>Auto resize</input><br>
+    <iframe id="box"></iframe>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/dist/jquery.detect-change.js"></script>
+    <script>
+        var frame = $('#box');
+        var frameBody;
+        var autoResize = $('#ch');
+        autoResize.on('click', function(){
+            frame.attr('scrolling', autoResize.is(":checked") ? 'no' : 'yes');
+        });
+        frame.attr('src', 'frame').load(function(){
+            frameBody = $(frame[0].contentWindow.document.body);
+            frameBody.detectChange('clientHeight',
+                function(oldVal, newVal, isInit){
+                    if (autoResize.is(":checked")){
+                        frame.height(newVal+16);
+                    }
+                });
+        });
+    </script>
+
+</body>
+</html>
